@@ -62,15 +62,14 @@ http://www.templatemo.com/tm-515-eatery
                          <li><a href="#about" class="smoothScroll">About</a></li>
                          <li><a href="#team" class="smoothScroll">Chef</a></li>
                          <li><a href="#menu" class="smoothScroll">Menu</a></li>
-                         <li><a href="#contact" class="smoothScroll">Reservation</a></li>
+                         <li><a href="/reservation" class="smoothScroll">Reservation</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#">Call Now! <i class="fa fa-phone"></i> 0812 3456 7890</a></li>
+                         <li><a href="footer">Call Now! <i class="fa fa-phone"></i> 0812 3456 7890</a></li>
                          <a href="login" class="section-btn">Login</a>
                     </ul>
                </div>
-
           </div>
      </section>
 
@@ -403,7 +402,7 @@ http://www.templatemo.com/tm-515-eatery
      </section>  
 
 
-     <!-- CONTACT -->
+     {{-- <!-- CONTACT -->
      <section id="contact" data-stellar-background-ratio="0.5">
           <div class="container">
                <div class="row">
@@ -422,7 +421,7 @@ http://www.templatemo.com/tm-515-eatery
                          </div>
 
                          <!-- CONTACT FORM -->
-                         <form action="reservation.store" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+                         <form action="{{url('store')}}" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
                               @csrf
                               <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
                               <h6 class="text-success">Your reservation has been sent successfully.</h6>
@@ -450,7 +449,7 @@ http://www.templatemo.com/tm-515-eatery
 
                </div>
           </div>
-     </section>          
+     </section>           --}}
 
 
      <!-- FOOTER -->

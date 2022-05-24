@@ -9,12 +9,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Pemesanan</h4>
+                    <h4 class="card-title"> Reservation</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
-                            <thead>
+                            <thead class=" text-primary">
                                 <tr>
                                     <th>No.</th>
                                     <th>Nama</th>
@@ -41,7 +41,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                        
                     </div>
                 </div>
             </div>

@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/reservation', function () {
+    return view('reservation');
+});
+
 // Route::resource('/reservations', ReservationController::class);
 Route::get('/create', [ReservationController::class, 'create'])->name('reservation.create');
 Route::post('/store', [ReservationController::class, 'store'])->name('reservation.store');
