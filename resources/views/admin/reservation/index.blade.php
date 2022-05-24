@@ -4,43 +4,50 @@
 ])
 
 @section('content')
-    <div class="content">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="table-responsive m-b-40">
-                    <table class="table table-borderless table-data3">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Nama</th>
-                                <th>Email</th>
-                                <th>Telepon</th>
-                                <th>Pesan</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $i => $dataKas)
-                            <tr>
-                                <td>{{ $i + 1}}</td>
-                                <td> {{ $dataKas->nama}}</td>
-                                <td> {{ $dataKas->email}}</td>
-                                <td> {{ $dataKas->telepon}}</td>
-                                <td> {{ $dataKas->pesan}}</td>
-                                <td>
-                                    <a href="{{ route('reservation.edit', $dataKas->id)}}"><i class="fas fa-edit"></i></a>
-                                    |
-                                    <a href="{{ route('reservation.destroy', $dataKas->id)}}"><i class="fas fa-trash" style="color:red"></i></a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Pemesanan</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Telepon</th>
+                                    <th>Pesan</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $i => $dataR)
+                                <tr>
+                                    <td>{{ $i + 1}}</td>
+                                    <td> {{ $dataR->nama}}</td>
+                                    <td> {{ $dataR->email}}</td>
+                                    <td> {{ $dataR->telepon}}</td>
+                                    <td> {{ $dataR->pesan}}</td>
+                                    <td>
+                                        <a href="{{ route('reservation.edit', $dataR->id)}}"><i class="far fa-edit" style="color:green"></i></a>
+                                        |
+                                        <a href="{{ route('reservation.destroy', $dataR->id)}}"><i class="fas fa-trash" style="color:red"></i></a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection
 
 @push('scripts')

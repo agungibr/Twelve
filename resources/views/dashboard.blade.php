@@ -67,7 +67,7 @@ http://www.templatemo.com/tm-515-eatery
 
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="#">Call Now! <i class="fa fa-phone"></i> 0812 3456 7890</a></li>
-                         <a href="#footer" class="section-btn">Contact</a>
+                         <a href="login" class="section-btn">Login</a>
                     </ul>
                </div>
 
@@ -423,7 +423,7 @@ http://www.templatemo.com/tm-515-eatery
 
                          <!-- CONTACT FORM -->
                          <form action="reservation.store" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
-                              {{csrf_field()}}
+                              @csrf
                               <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
                               <h6 class="text-success">Your reservation has been sent successfully.</h6>
                               
@@ -506,7 +506,7 @@ http://www.templatemo.com/tm-515-eatery
                               <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
                               <li><a href="#" class="fa fa-twitter"></a></li>
                               <li><a href="#" class="fa fa-instagram"></a></li>
-                              <li><a href="/login" class="fa fa-google"></a></li>
+                              <li><a href="#" class="fa fa-google"></a></li>
                          </ul>
 
                          <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s"> 

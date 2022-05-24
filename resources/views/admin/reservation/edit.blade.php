@@ -6,33 +6,42 @@
 @section('content')
 <div class="content">
     <div class="row">
-        <form class="col-md-12">
+        <form action="{{ route('reservation.update', $data->id)}}" method="post" class="col-md-12">
+            @csrf
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">{{ __('Change Password') }}</h5>
+                    <h5 class="title">{{ __('Change Reservation') }}</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <label class="col-md-3 col-form-label">{{ __('Old Password') }}</label>
+                        <label class="col-md-3 col-form-label">{{ __('Nama') }}</label>
                         <div class="col-md-9">
                             <div class="form-group">
-                                <input type="password" name="old_password" class="form-control" placeholder="Old password" required>
+                                <input type="text" name="nama" class="form-control" value="{{ $data->nama}}" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <label class="col-md-3 col-form-label">{{ __('New Password') }}</label>
+                        <label class="col-md-3 col-form-label">{{ __('Email') }}</label>
                         <div class="col-md-9">
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                <input type="email" name="email" class="form-control" value="{{ $data->email}}" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <label class="col-md-3 col-form-label">{{ __('Password Confirmation') }}</label>
+                        <label class="col-md-3 col-form-label">{{ __('Telepon') }}</label>
                         <div class="col-md-9">
                             <div class="form-group">
-                                <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation" required>
+                                <input type="text" name="telepon" class="form-control" value="{{ $data->telepon}}" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3 col-form-label">{{ __('Pesan') }}</label>
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <input type="text" name="pesan" class="form-control" value="{{ $data->pesan}}" required>
                             </div>
                         </div>
                     </div>
@@ -41,6 +50,13 @@
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-info btn-round">{{ __('Save Changes') }}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer ">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-info btn-round" data-bs-toggle="collapse" href="{{url('/index')}}" role="button" aria-expanded="false" aria-controls="collapseExample">Back</a>
                         </div>
                     </div>
                 </div>

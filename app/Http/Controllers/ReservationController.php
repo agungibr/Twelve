@@ -15,7 +15,7 @@ class ReservationController extends Controller
     public function index()
     {
         $data = Reservation::paginate(2);
-        return view('admin/reservation/index');
+        return view('admin/reservation/index', compact('data'));
     }
 
     /**
@@ -39,10 +39,10 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $reservations = Reservation::create($request->all());
-        $reservations->save();
+        $data = Reservation::create($request->all());
+        $data->save();
 
-        return redirect()->route('reservation.create');
+        return view('dashboard');
     }
 
     /**
@@ -64,7 +64,8 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Reservation::findOrFail($id);
+        return view('admin/reservation/edit', compact('data'));
     }
 
     /**
@@ -76,7 +77,11 @@ class ReservationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reservation = Reservation::findOrFail($id);
+        $data = $request->except(['_token']);
+        $reservation->update($data);
+
+        return redirect()->route('reservation.index');
     }
 
     /**
@@ -87,6 +92,9 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-       //
+        $data = Reservation::findOrFail($id);
+        $data->delete();
+
+        return redirect()->route('reservation.index');
     }
 }
